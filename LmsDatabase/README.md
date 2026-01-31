@@ -1,6 +1,7 @@
 Learning Management System (LMS) – MSSQL Database
-Project Overview :
 
+
+Project Overview :
 This project is a Learning Management System (LMS) designed using SQL.
 It focuses on organizing users, courses, enrollments, lessons, assessments, and user activity in a structured and practical way.
 
