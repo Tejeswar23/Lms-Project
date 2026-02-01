@@ -1,5 +1,6 @@
 -- Section 5: Transactions and Concurrency
 -- Design a transaction flow for enrolling a user into a course.
+-- for checking purpose we use the random value
 DECLARE @user_id INT = 5;
 DECLARE @course_id INT = 3;
 DECLARE @enrollment_id INT = 101;
@@ -50,6 +51,7 @@ END CATCH;
 -- Explain how to handle concurrent assessment submissions safely.
 /*  concurrent assessment submission - two or more users submitted assessment at the same time 
     If not handled properly,this can cause: Duplicate submissions ,Overwritten scores ,Inconsistent data */
+-- for checking purpose we use the random value
 DECLARE @assessment_id INT = 10;
 DECLARE @submission_id INT = 7;
 DEClARE @score INT = 80;

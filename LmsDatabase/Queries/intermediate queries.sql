@@ -286,4 +286,3 @@ FROM lms.Enrollments e
 JOIN lms.Users u
     ON e.user_id = u.user_id
 WHERE e.current_status = 'Inactive';
-

@@ -179,4 +179,4 @@ LEFT JOIN lms.AssessmentSubmissions s
     ON s.assessment_id = a.assessment_id
    AND s.user_id = e.user_id
 GROUP BY c.course_id,c.course_name
-HAVING COUNT(DISTINCT e.user_id)=COUNT(DISTINCT s.user_id);
+HAVING COUNT(DISTINCT e.user_id)=COUNT(DISTINCT s.user_id)

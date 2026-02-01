@@ -57,7 +57,7 @@ ON lms.UserActivity(activity_time);
     you cannot drop the table,you cannot change column types
     count_big returns very large number type -BIGINT */
 
-/*CREATE VIEW lms.vw_DailyUserActivity
+CREATE VIEW lms.vw_DailyUserActivity
 WITH SCHEMABINDING
 AS
 SELECT
@@ -67,7 +67,7 @@ SELECT
 FROM lms.UserActivity ua
 GROUP BY
     ua.user_id,
-    CAST(ua.activity_time AS DATE); */
+    CAST(ua.activity_time AS DATE); 
 
 -- Create UNIQUE CLUSTERED INDEX
 -- now this view is materialized -stored on disk.
@@ -159,6 +159,8 @@ BEGIN
 END;
 
 -- Ensure that only instructors can create courses.
+/* alter the user table and a column ck_user_role ,so that we can ensure that only the instructors can only create the courses
+   this way we can prevent them the instructors can create a course */
 ALTER TABLE lms.Users
 ADD CONSTRAINT CK_User_Role
 CHECK (role IN ('Student', 'Instructor', 'Admin'));
